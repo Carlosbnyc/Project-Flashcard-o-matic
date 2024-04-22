@@ -62,7 +62,7 @@ export default function Study() {
     }
   };
 
-  if (error[0]) return <NotFound />;
+
 
   return (
     <>
