@@ -70,13 +70,13 @@ export default function Deck() {
               <div className="flex-item">
                 <Link
                   className="btn btn-secondary mr-2"
-                  to={`/${deck.id}/edit`}
+                  to={`deck/${deck.id}/edit`}
                 >
                   <i className="fa-solid fa-pencil"></i> Edit
                 </Link>
                 <Link
                   className="btn btn-primary  mr-2"
-                  to={`/${deck.id}/study`}
+                  to={`deck/${deck.id}/study`}
                 >
                   <i className="fa-solid fa-book mr-1"></i> Study
                 </Link>
