@@ -4,7 +4,8 @@ import NavBar from "../Layout/NavBar";
 import { readDeck } from "../utils/api";
 import Card from "./Card";
 import NotEnoughCards from "./NotEnoughCards";
-import NotFound from "../Layout/NotFound";
+import { act } from 'react-dom/test-utils';
+
 
 export default function Study() {
   const [deck, setDeck] = useState({});
@@ -45,10 +46,12 @@ export default function Study() {
     handleFlip();
   };
 
-  const handleFlip = () => {
-    setFlipped(!flipped);
+  const handleFlipWithAct = () => {
+    act(() => {
+      setFlipped(!flipped);
+    });
   };
-
+  
   const handleNext = () => {
     if (nextIndex < cards.length) {
       setCard(cards[nextIndex]);
@@ -83,7 +86,7 @@ export default function Study() {
           count={count}
           index={nextIndex}
           flipped={flipped}
-          flip={handleFlip}
+          flip={handleFlipWithAct}
           next={handleNext}
         />
         </>
