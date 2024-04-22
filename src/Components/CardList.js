@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate,  } from "react-router-dom";
+import { Link, useNavigate, useMatch, useParams } from "react-router-dom";
 import NotFound from "../Layout/NotFound";
-import { deleteCard } from "../utils/api";
+import { deleteCard, readDeck } from "../utils/api";
 
 export default function CardList({ cards }) {
+
+    const { deckId } = useParams();
+    const [deck, setDeck] = useState({ cards: [] });
   const history = useNavigate();
   const [error, setError] = useState([]);
 
@@ -40,18 +43,12 @@ export default function CardList({ cards }) {
               <div className="card-text w-50 m-2">
                 <p>{card.back}</p>
                 <div className="d-flex justify-content-end">
-                  <button
-                    className="btn btn-secondary mr-2"
-                    type="button"
-                    onClick={() => history.push(`/decks/${deck.id}/cards/${card.id}/edit`)}
-                  >
-                    <i className="fa-solid fa-pencil"></i> Edit
-                  </button>
+                <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary">View</Link>
                   <button
                     className="btn btn-danger"
                     type="button"
                     onClick={() => handleDelete(card.id)}
-                  >
+                  > Delete
                     <i className="fa-solid fa-trash-can"></i>
                   </button>
                 </div>

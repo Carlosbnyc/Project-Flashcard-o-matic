@@ -22,8 +22,9 @@ export default function DeckList({ decks }) {
         setError((currErr) => [...currErr, err]);
       }
     }
-    return () => abortCon.abort();
+    abortCon.abort(); // Move the abort call outside of the try-catch block
   }
+  
 
   if (error[0]) return <NotFound />;
 
@@ -63,7 +64,7 @@ export default function DeckList({ decks }) {
                   className="btn btn-danger"
                   type="button"
                   onClick={() => handleDelete(deck.id)}
-                >
+                > Delete
                   <i className="fa-solid fa-trash-can"></i>
                 </button>
               </div>

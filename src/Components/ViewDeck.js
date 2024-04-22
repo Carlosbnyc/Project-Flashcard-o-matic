@@ -69,7 +69,7 @@ export default function Deck() {
               <div className="flex-item">
                 <Link
                   className="btn btn-secondary mr-2"
-                  to={`/${deck.id}/edit`}
+                  to={`/decks/${deck.id}/edit`}
                 >
                   <i className="fa-solid fa-pencil"></i> Edit
                 </Link>
@@ -79,8 +79,8 @@ export default function Deck() {
                 >
                   <i className="fa-solid fa-book mr-1"></i> Study
                 </Link>
-                <Link className="btn btn-primary" to={`/decks/${deck.id}/cards/new`}>
-                  <i className="fa-solid fa-plus"></i> Add Cards
+                <Link className="btn btn-primary" to={`/decks/${deck.id}/cards/new`}> Add New
+                  <i className="fa-solid fa-plus"></i> 
                 </Link>
               </div>
               <div className="flex-item">
@@ -89,7 +89,7 @@ export default function Deck() {
                   type="button"
                   onClick={() => handleDelete(deck.id)}
                 >
-                  <i className="fa-solid fa-trash-can"></i>
+                  <i className="fa-solid fa-trash-can"></i>Delete
                 </button>
               </div>
             </div>

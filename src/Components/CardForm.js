@@ -86,7 +86,7 @@ export default function CardForm({ mode = "create" }) {
           />
         </div>
         <div className="row">
-          <Link to={`/${deckId}`} className="btn btn-secondary mr-2">
+          <Link to={`/decks/${deckId}`} className="btn btn-secondary mr-2">
             {mode === "edit" ? "Cancel" : "Done"}
           </Link>
           <button type="submit" className="btn btn-primary">
