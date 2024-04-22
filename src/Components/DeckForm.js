@@ -93,7 +93,7 @@ export default function DeckForm({ mode }) {
         </div>
         <div className="row">
           <Link
-            to={mode === "create" ? "/" : `/decks/${deckId}`}
+            to={mode === "create" ? "/" : `/${deckId}`}
             className="btn btn-secondary mr-2"
           >
             Cancel

@@ -35,7 +35,7 @@ export default function EditCard() {
       <div className="d-flex">
         <NavBar
           linkName={`Deck ${deck.name}`}
-          link={`/decks/${deck.id}`}
+          link={`/${deck.id}`}
           pageName={`Edit Card ${cardId}`}
         />
       </div>

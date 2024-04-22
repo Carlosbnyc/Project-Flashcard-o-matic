@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="d-flex flex-column">
       <div className="mb-2">
-        <Link className="btn btn-secondary" to="/decks/new">
+        <Link className="btn btn-secondary" to="/new">
           <i className="fa-solid fa-plus"></i> Create Deck
         </Link>
       </div>

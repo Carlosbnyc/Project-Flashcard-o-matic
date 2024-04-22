@@ -47,13 +47,13 @@ export default function DeckList({ decks }) {
               <div className="">
                 <Link
                   className="btn btn-secondary mr-2"
-                  to={`decks/${deck.id}`}
+                  to={`/${deck.id}`}
                 >
                   <i className="fa-solid fa-eye mr-1"></i> View
                 </Link>
                 <Link
                   className="btn btn-primary  mr-2"
-                  to={`/decks/${deck.id}/study`}
+                  to={`/${deck.id}/study`}
                 >
                   <i className="fa-solid fa-book mr-1"></i> Study
                 </Link>
