@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams, useMatch } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { readDeck, deleteDeck } from "../utils/api";
 import NavBar from "../Layout/NavBar";
 import CardList from "./CardList";
@@ -8,7 +8,6 @@ import NotFound from "../Layout/NotFound";
 export default function Deck() {
   const { deckId } = useParams();
   const history = useNavigate();
-  const { url } = useMatch();
   const [deck, setDeck] = useState({});
   const [error, setError] = useState([]);
 
@@ -80,7 +79,7 @@ export default function Deck() {
                 >
                   <i className="fa-solid fa-book mr-1"></i> Study
                 </Link>
-                <Link className="btn btn-primary" to={`${url}/cards/new`}>
+                <Link className="btn btn-primary" to={`/decks/${deck.id}/cards/new`}>
                   <i className="fa-solid fa-plus"></i> Add Cards
                 </Link>
               </div>
