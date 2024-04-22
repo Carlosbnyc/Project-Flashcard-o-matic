@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate, useMatch } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import NotFound from "../Layout/NotFound";
 import { deleteCard } from "../utils/api";
 
 export default function CardList({ cards }) {
   const history = useNavigate();
-  const { url } = useMatch();
   const [error, setError] = useState([]);
 
   async function handleDelete(id) {
@@ -44,7 +43,7 @@ export default function CardList({ cards }) {
                   <button
                     className="btn btn-secondary mr-2"
                     type="button"
-                    onClick={() => history.push(`${url}/cards/${card.id}/edit`)}
+                    onClick={() => history.push(`/decks/${deck.id}/cards/${card.id}/edit`)}
                   >
                     <i className="fa-solid fa-pencil"></i> Edit
                   </button>
