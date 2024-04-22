@@ -77,6 +77,7 @@ export default function Study() {
       {count < 3 || !count ? (
         <NotEnoughCards name={deck.name} id={deck.id} cards={count} />
       ) : (
+        <>
         <Card
           card={card}
           count={count}
@@ -85,6 +86,7 @@ export default function Study() {
           flip={handleFlip}
           next={handleNext}
         />
+        </>
       )}
     </>
   );
