@@ -24,14 +24,14 @@ export default function Home() {
     }
     loadDecks();
     return abortCon.abort();
-  }, []);
+  }, [decks]);
 
   if (error[0]) return <NotFound />;
 
   return (
     <div className="d-flex flex-column">
       <div className="mb-2">
-        <Link className="btn btn-secondary" to="/new">
+        <Link className="btn btn-secondary" to="/decks/new">
           <i className="fa-solid fa-plus"></i> Create Deck
         </Link>
       </div>
