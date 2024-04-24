@@ -6,6 +6,25 @@ import { createDeck, readDeck, updateDeck } from "../utils/api";
 export default function DeckForm({ mode }) {
   const history = useNavigate();
   const { deckId } = useParams();
+  const [deck, setDeck] = useState({});
+
+  useEffect(() => {
+    const abortCon = new AbortController();
+    async function getDeck() {
+      try {
+        if (deckId) {
+          const gotDeck = await readDeck(deckId, abortCon.signal);
+          setDeck({ ...gotDeck });
+        }
+      } catch (err) {
+        if (err.name !== "AbortError") {
+          setError((currErr) => [...currErr, err]);
+        }
+      }
+    }
+    getDeck();
+    return () => abortCon.abort();
+  }, [deckId]);
 
   const initialFormData = {
     name: "",
@@ -17,6 +36,7 @@ export default function DeckForm({ mode }) {
   const handleChange = ({ target }) =>
     setFormData({ ...formData, [target.name]: target.value });
 
+    
   useEffect(() => {
     const abortCon = new AbortController();
 
@@ -93,7 +113,7 @@ export default function DeckForm({ mode }) {
         </div>
         <div className="row">
           <Link
-            to={mode === "create" ? "/" : `/deck/${deckId}`}
+            to={`/decks/${deck.id}`}
             className="btn btn-secondary mr-2"
           >
             Cancel

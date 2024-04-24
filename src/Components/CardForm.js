@@ -10,12 +10,16 @@ export default function CardForm({ mode = "create" }) {
     front: "",
     back: "",
   };
+
+
   const [formData, setFormData] = useState({ ...initialFormData });
   const [error, setError] = useState([]);
 
   const handleChange = ({ target }) =>
     setFormData({ ...formData, [target.name]: target.value });
 
+
+    
   useEffect(() => {
     const abortCon = new AbortController();
     async function getEditCard() {
@@ -86,8 +90,8 @@ export default function CardForm({ mode = "create" }) {
           />
         </div>
         <div className="row">
-          <Link to={`/decks/${deckId}`} className="btn btn-secondary mr-2">
-            {mode === "edit" ? "Cancel" : "Done"}
+          <Link to={`/`} className="btn btn-secondary mr-2">
+            Cancel
           </Link>
           <button type="submit" className="btn btn-primary">
             {mode === "edit" ? "Submit" : "Save"}

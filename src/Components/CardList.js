@@ -28,7 +28,7 @@ export default function CardList({ cards }) {
     return () => abortCon.abort();
   }
 
-  if (error[0]) return <NotFound />;
+  // if (error[0]) return <NotFound />;
 
 
   return (
@@ -43,7 +43,7 @@ export default function CardList({ cards }) {
               <div className="card-text w-50 m-2">
                 <p>{card.back}</p>
                 <div className="d-flex justify-content-end">
-                <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary">View</Link>
+                <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary">Edit</Link>
                   <button
                     className="btn btn-danger"
                     type="button"

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../Layout/NavBar";
-import NotFound from "../Layout/NotFound";
 import { readDeck } from "../utils/api";
 import CardForm from "./CardForm";
 
@@ -28,7 +27,7 @@ export default function EditCard() {
     return () => abortCon.abort();
   }, [deckId]);
 
-  if (error[0]) return <NotFound />;
+
 
   return (
     <>
