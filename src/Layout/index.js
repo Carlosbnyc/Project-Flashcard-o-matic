@@ -8,7 +8,7 @@ import ViewDeck from "../Components/ViewDeck";
 import EditDeck from "../Components/EditDeck";
 import EditCard from "../Components/EditCard";
 import AddCard from "../Components/AddCard";
-
+import React from "react";
 
 function Layout() {
     return (

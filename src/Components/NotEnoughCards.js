@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 export default function NotEnoughCards({ id, cards }) {
   return (
     <div className="d-flex flex-column">

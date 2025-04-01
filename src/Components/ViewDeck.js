@@ -4,6 +4,7 @@ import { readDeck, deleteDeck } from "../utils/api";
 import NavBar from "../Layout/NavBar";
 import CardList from "./CardList";
 import NotFound from "../Layout/NotFound";
+import React from "react";
 
 export default function Deck() {
   const { deckId } = useParams();
